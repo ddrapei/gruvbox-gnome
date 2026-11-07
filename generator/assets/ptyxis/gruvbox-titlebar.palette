@@ -1,0 +1,53 @@
+# Ptyxis' built-in "Gruvbox" palette plus gruvbox title bar colours, so the
+# terminal window matches the rest of the desktop (~/.config/gtk-4.0/gtk.css).
+# The built-in palette has no Titlebar* keys, so Ptyxis falls back to a
+# neutral grey title bar with white text.
+[Palette]
+Name=Gruvbox (with title bar)
+UseSystemAccent=true
+
+[Light]
+Background=#FBF1C7
+Foreground=#3C3836
+TitlebarBackground=#F2E5BC
+TitlebarForeground=#3C3836
+Cursor=#3C3836
+Color0=#FBF1C7
+Color1=#CC241D
+Color2=#98971A
+Color3=#D79921
+Color4=#458588
+Color5=#B16286
+Color6=#689D6A
+Color7=#7C6F64
+Color8=#928374
+Color9=#9D0006
+Color10=#79740E
+Color11=#B57614
+Color12=#076678
+Color13=#8F3F71
+Color14=#427B58
+Color15=#3C3836
+
+[Dark]
+Background=#282828
+Foreground=#EBDBB2
+TitlebarBackground=#32302F
+TitlebarForeground=#EBDBB2
+Cursor=#EBDBB2
+Color0=#282828
+Color1=#CC241D
+Color2=#98971A
+Color3=#D79921
+Color4=#458588
+Color5=#B16286
+Color6=#689D6A
+Color7=#A89984
+Color8=#928374
+Color9=#FB4934
+Color10=#B8BB26
+Color11=#FABD2F
+Color12=#83A598
+Color13=#D3869B
+Color14=#8EC07C
+Color15=#EBDBB2

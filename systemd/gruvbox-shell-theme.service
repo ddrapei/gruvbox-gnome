@@ -1,0 +1,17 @@
+[Unit]
+Description=Regenerate the Gruvbox GNOME Shell theme if GNOME Shell or its colours changed
+Documentation=file://%h/Projects/gruvbox-shell
+# Runs before GNOME Shell starts, so the shell never loads a stale theme.
+# Wanted (not required) by the target: a failure can never block login.
+Before=gnome-session-pre.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/gruvbox-shell-theme
+TimeoutStartSec=15
+# It only reads GNOME's stylesheet and writes under ~/.local/share; it never
+# needs to gain privileges (e.g. through a setuid program).
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=gnome-session-pre.target

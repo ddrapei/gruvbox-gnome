@@ -1,0 +1,22 @@
+[package]
+name = "gruvbox-shell-theme"
+version = "7.0.0"
+edition = "2024"
+description = "Gruvbox recolour of the installed GNOME Shell's stock stylesheet, plus matching folder icons"
+publish = false
+
+[dependencies]
+gio = "0.22.10"
+regex = "1.13.1"
+sha2 = "0.11"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+# Required: a panic must unwind so main() can catch it and run the fail-safe
+# (remove the generated stylesheet). With "abort" a bug would skip it.
+panic = "unwind"

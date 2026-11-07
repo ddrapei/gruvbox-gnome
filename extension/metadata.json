@@ -1,0 +1,7 @@
+{
+  "uuid": "gruvbox-shell@ex_gatito",
+  "name": "Gruvbox Shell",
+  "description": "Loads the generated Gruvbox recolour of the stock shell stylesheet in place of the stock one (not on top of it, like User Themes would). Source: ~/Projects/gruvbox-shell",
+  "shell-version": ["51"],
+  "session-modes": ["user", "unlock-dialog"]
+}

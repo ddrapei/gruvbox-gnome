@@ -1,0 +1,48 @@
+:root {
+  /* Square corners on all tabs */
+  --tab-border-radius: 0px !important;
+
+  /* Selected-tab outline color. The Gruvbox theme's `tab_line` (orange
+     #fe8019) feeds these variables; overriding them here means Firefox's
+     own selected-tab styling uses this color too. */
+  --my-tab-outline-color: color-mix(in srgb, #403820, transparent);
+  --lwt-tab-line-color: var(--my-tab-outline-color) !important;
+  --tab-border-color-selected: var(--my-tab-outline-color) !important;
+
+  /* Hovered-tab outline. The hover background is the tab text colour (cream)
+     at ~17% over the tab bar (#282828); this is the same cream a little
+     stronger (26%), so the ring stands out from the hover background as
+     subtly as the selected tab's ring does from its own. Opaque, so the
+     part drawn over the hover background matches the part outside it. */
+  --my-tab-hover-outline-color: color-mix(in srgb, rgb(235, 219, 178) 26%, #282828);
+
+  /* Selected tab text: same cream/yellow as unselected tabs, instead of
+     the theme's `tab_text` aqua-green (#83a598). */
+  --tab-text-color-selected: rgb(235, 219, 178) !important;
+}
+
+.tabbrowser-tab .tab-background {
+  border-radius: 0 !important;
+}
+
+/* `.tabbrowser-tab[selected]` changes as soon as you switch tabs, but
+   `.tab-background[selected]` mirrors `visuallyselected`, which lags
+   behind during fast Ctrl+PgUp/PgDn switching. Match both so the custom
+   outline is always used. */
+.tabbrowser-tab:is([selected], [visuallyselected], [multiselected]) .tab-background,
+.tab-background:is([selected], [multiselected]) {
+  outline: 3px solid var(--my-tab-outline-color) !important;
+  outline-offset: -1px !important;
+  box-shadow: none !important;
+}
+
+/* Hovered tabs that are not selected: the same outline, in the hover tint.
+   (Both selected markers are excluded, see above.) */
+.tabbrowser-tab:hover:not([selected], [visuallyselected], [multiselected]) .tab-background:not([selected], [multiselected]) {
+  outline: 3px solid var(--my-tab-hover-outline-color) !important;
+  outline-offset: -1px !important;
+}
+
+.tabbrowser-tab:is([selected], [visuallyselected], [multiselected]) .tab-content {
+  color: rgb(235, 219, 178) !important;
+}

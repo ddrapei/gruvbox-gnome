@@ -1,0 +1,53 @@
+/*
+ * Gruvbox Dark for GTK3 apps
+ *
+ * Overrides libadwaita's named colours, on top of the Gruvbox-Dark GTK3
+ * theme (gtk-theme, installed by install.sh --setup). Same palette as
+ * ~/.config/gtk-4.0/gtk.css, so GTK3 and GTK4 apps match.
+ *
+ * To undo: delete this file and reopen apps.
+ */
+
+/* Accent: ACCENT_BG/ACCENT_FG from generator/src/color.rs, the same as GTK4
+ * apps and the shell. accent_color = text/link shade, derived the way
+ * libadwaita derives it (OKLab lightness raised to 0.85). */
+@define-color accent_bg_color {{accent_bg}};
+@define-color accent_fg_color {{accent_fg}};
+@define-color accent_color {{accent_line}};
+
+@define-color destructive_bg_color #cc241d;
+@define-color destructive_fg_color #fbf1c7;
+@define-color destructive_color #fb4934;
+@define-color success_bg_color #98971a;
+@define-color success_fg_color #282828;
+@define-color success_color #b8bb26;
+@define-color warning_bg_color #d79921;
+@define-color warning_fg_color #282828;
+@define-color warning_color #fabd2f;
+@define-color error_bg_color #cc241d;
+@define-color error_fg_color #fbf1c7;
+@define-color error_color #fb4934;
+
+/* Surfaces: bg0_h #1d2021, bg0 #282828, bg0_s #32302f, bg1 #3c3836 */
+@define-color window_bg_color #282828;
+@define-color window_fg_color #ebdbb2;
+@define-color view_bg_color #1d2021;
+@define-color view_fg_color #ebdbb2;
+
+@define-color headerbar_bg_color #32302f;
+@define-color headerbar_fg_color #ebdbb2;
+@define-color headerbar_border_color #ebdbb2;
+@define-color headerbar_backdrop_color #282828;
+
+@define-color sidebar_bg_color #32302f;
+@define-color sidebar_fg_color #ebdbb2;
+@define-color sidebar_backdrop_color #2d2c2b;
+
+@define-color card_bg_color rgba(235, 219, 178, 0.08);
+@define-color card_fg_color #ebdbb2;
+@define-color dialog_bg_color #3c3836;
+@define-color dialog_fg_color #ebdbb2;
+@define-color popover_bg_color #3c3836;
+@define-color popover_fg_color #ebdbb2;
+@define-color thumbnail_bg_color #3c3836;
+@define-color thumbnail_fg_color #ebdbb2;

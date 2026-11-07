@@ -1,0 +1,68 @@
+/*
+ * Gruvbox Dark for libadwaita / GTK4 apps
+ *
+ * Only re-defines libadwaita's own palette colours, so all widget styling
+ * stays stock libadwaita (nothing to go stale when GNOME updates).
+ * Applies in dark mode only; light mode stays stock Adwaita.
+ *
+ * Palette: https://github.com/morhetz/gruvbox (same colours as the
+ * Firefox Gruvbox theme and Ptyxis' Gruvbox palette).
+ *
+ * To undo: delete this file and reopen apps.
+ */
+
+@media (prefers-color-scheme: dark) {
+  /* Accent: ACCENT_BG/ACCENT_FG from generator/src/color.rs, the same as
+   * the shell theme. libadwaita derives the text/link accent from it. */
+  @define-color accent_bg_color {{accent_bg}};
+  @define-color accent_fg_color {{accent_fg}};
+
+  @define-color destructive_bg_color #cc241d;
+  @define-color destructive_fg_color #fbf1c7;
+  @define-color success_bg_color #98971a;
+  @define-color success_fg_color #282828;
+  @define-color warning_bg_color #d79921;
+  @define-color warning_fg_color #282828;
+  @define-color error_bg_color #cc241d;
+  @define-color error_fg_color #fbf1c7;
+
+  /* Surfaces: bg0_h #1d2021, bg0 #282828, bg0_s #32302f, bg1 #3c3836 */
+  @define-color window_bg_color #282828;
+  @define-color window_fg_color #ebdbb2;
+  @define-color view_bg_color #1d2021;
+  @define-color view_fg_color #ebdbb2;
+
+  @define-color headerbar_bg_color #32302f;
+  @define-color headerbar_fg_color #ebdbb2;
+  @define-color headerbar_border_color #ebdbb2;
+  @define-color headerbar_backdrop_color #282828;
+
+  @define-color sidebar_bg_color #32302f;
+  @define-color sidebar_fg_color #ebdbb2;
+  @define-color sidebar_backdrop_color #2d2c2b;
+  @define-color secondary_sidebar_bg_color #2d2c2b;
+  @define-color secondary_sidebar_fg_color #ebdbb2;
+  @define-color secondary_sidebar_backdrop_color #2a2a29;
+
+  @define-color card_bg_color rgb(235 219 178 / 8%);
+  @define-color card_fg_color #ebdbb2;
+  @define-color dialog_bg_color #3c3836;
+  @define-color dialog_fg_color #ebdbb2;
+  @define-color popover_bg_color #3c3836;
+  @define-color popover_fg_color #ebdbb2;
+  @define-color thumbnail_bg_color #3c3836;
+  @define-color thumbnail_fg_color #ebdbb2;
+
+  /* Plain variables in libadwaita (no named colour). The standalone
+   * success/error colours (text, icons) use gruvbox's bright green/red
+   * instead of libadwaita's auto-lightened versions. */
+  :root {
+    --success-color: #b8bb26;
+    --error-color: #fb4934;
+    --destructive-color: #fb4934;
+    --active-toggle-bg-color: rgb(235 219 178 / 20%);
+    --active-toggle-fg-color: #fbf1c7;
+    --overview-bg-color: #1d2021;
+    --overview-fg-color: #ebdbb2;
+  }
+}
